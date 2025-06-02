@@ -100,7 +100,7 @@ for((;;)); do
 
   if ((height==$UPD_HEIGHT)); then
     if $proposal_status_checked || [[ $status == "" ]]; then
-      # Если статус предложения "Passed" или нет ответа от API, выполняем обновление
+      # If the proposal status is "Passed" or there is no response from the API, update will be perform
     sudo mv $NEW_BIN_PATH $OLD_BIN_PATH
     sudo systemctl restart $BINARY
     printLine
@@ -111,7 +111,7 @@ for((;;)); do
     printLine
     break
   else
-    # Во всех остальных случаях отменяем обновление и выходим из скрипта
+    # oe else cancel the update and exit the script
     echo -e "$RED Update cancelled due to proposal status: $status, the session will be terminated automatically after 15 min${NC}"
     sleep 900
     tmux kill-session
