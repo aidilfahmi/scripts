@@ -71,7 +71,7 @@ trap cleanup EXIT INT TERM
 RPC_PORT=$(grep -m1 '^laddr = ' "$CONFIG_FILE" \
     | sed -E 's/.*:([0-9]+)".*/\1/')
 
-TARGET_HEIGHT=$((UPGRADE_HEIGHT - 1))
+TARGET_HEIGHT=$((UPGRADE_HEIGHT))
 
 chmod +x "$NEW_BINARY"
 
